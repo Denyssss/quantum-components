@@ -5,12 +5,15 @@
   "keywords": [],
   "author": "Denys Vasylenko <dsvasylenko@gmail.com>",
   "license": "ISC",
-  "main": "lib/quantum-components.js",
+  "main": "dist/quantum-components.cjs.js",
+  "module": "dist/quantum-components.esm.js",
+  "src": "lib/quantum-components.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
+    "dist",
     "lib"
   ],
   "publishConfig": {
