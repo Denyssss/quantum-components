@@ -20,11 +20,11 @@ const inputOptions = {
     input: inputPath,
     external: ['react'],
     plugins: [
-        resolve(),
         postcss({
             // Key configuration
             modules: true,
         }),
+        resolve(),
         babel({
             presets: ['@babel/preset-env', '@babel/preset-react'],
             babelHelpers: 'bundled',
@@ -47,9 +47,9 @@ async function build() {
     // create bundle
     const bundle = await rollup.rollup(inputOptions);
     // loop through the options and write individual bundles
-    outputOptions.forEach(async (options) => {
+    for (const options of outputOptions) {
         await bundle.write(options);
-    });
+    }
 }
 
 build();
